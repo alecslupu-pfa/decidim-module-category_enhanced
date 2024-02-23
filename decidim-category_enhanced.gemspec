@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = ["Alexandru Emil Lupu"]
   s.email = ["contact@alecslupu.ro"]
   s.license = "AGPL-3.0"
-  s.homepage = "https://github.com/decidim/decidim-module-category_enhanced"
+  s.homepage = "https://github.com/alecslupu-pfa/decidim-module-category_enhanced"
   s.required_ruby_version = ">= 3.0"
 
   s.name = "decidim-category_enhanced"
@@ -18,5 +18,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
+  s.add_dependency "decidim-admin", Decidim::CategoryEnhanced.version
   s.add_dependency "decidim-core", Decidim::CategoryEnhanced.version
+  s.add_dependency "deface", ">= 1.9"
 end

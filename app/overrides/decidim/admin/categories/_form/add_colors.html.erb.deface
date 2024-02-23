@@ -1,0 +1,14 @@
+<!-- insert_after 'div.row[3]' -->
+<div class="row column">
+  <%= javascript_pack_tag "decidim_category_enhanced_admin", defer: false %>
+
+  <div class="organization-colors">
+    <%= form.color_field :text_color, data: { "label-preview" => true, "target" => "strong[data-label-preview]", "updates" => "color" } %>
+    <%= form.color_field :background_color, data: { "label-preview" => true, "target" => "strong[data-label-preview]", "updates" => "backgroundColor" } %>
+  </div>
+  <div class="mt-8">
+    <strong class="label" style="<%= "background-color: #{form.object.background_color}; color: #{form.object.text_color};" %>" data-label-preview>
+      Test Label
+    </strong>
+  </div>
+</div>
