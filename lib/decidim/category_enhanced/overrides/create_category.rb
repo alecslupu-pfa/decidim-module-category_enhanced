@@ -3,7 +3,7 @@
 module Decidim::CategoryEnhanced::Overrides::CreateCategory
     def create_category
       Decidim.traceability.create!(
-        Category,
+        Decidim::Category,
         @user,
         name: form.name,
         weight: form.weight,
