@@ -31,9 +31,15 @@ module Decidim
 
             if Decidim::CategoryEnhanced.coloured_labels
               Decidim::TagsCell.prepend Decidim::CategoryEnhanced::Overrides::TagsCell
+              Decidim::Proposals::ProposalTagsCell.prepend Decidim::CategoryEnhanced::Overrides::TagsCell
             end
           end
         end
+      end
+
+      initializer "category_enhanced.add_cells_view_paths", before: "decidim_proposals.add_cells_view_paths" do
+        Cell::ViewModel.view_paths << File.expand_path("#{Decidim::CategoryEnhanced::Engine.root}/app/cells")
+        Cell::ViewModel.view_paths << File.expand_path("#{Decidim::CategoryEnhanced::Engine.root}/app/views") # for partials
       end
 
       initializer "category_enhanced.webpacker.assets_path" do
